@@ -98,7 +98,7 @@ namespace csharp
         }
 
         [Test]
-        public void testNotIncreaseQualityWhenMaximumQuality()
+        public void testAgedBrieNotIncreaseQualityWhenMaximumQuality()
         {
             Item testItem = new Item { Name = "Aged Brie", SellIn = 20, Quality = 50 };
             IList<Item> Items = new List<Item> { testItem };
@@ -109,7 +109,7 @@ namespace csharp
         }
 
         [Test]
-        public void testNotIncreaseQualitySaleDatePassedWhenMaximumQuality()
+        public void testAgedBrieNotIncreaseQualitySaleDatePassedWhenMaximumQuality()
         {
             Item testItem = new Item { Name = "Aged Brie", SellIn = 0, Quality = 49 };
             IList<Item> Items = new List<Item> { testItem };
