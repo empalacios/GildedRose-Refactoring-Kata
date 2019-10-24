@@ -64,18 +64,6 @@ namespace csharp
         }
 
         [Test]
-        public void testBackstagePassConcertDatePassedDecrease()
-        {
-            Item testItem = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 23 };
-            IList<Item> Items = new List<Item> { testItem };
-            GildedRose app = new GildedRose(Items);
-
-            app.UpdateQuality();
-            Assert.AreEqual(-1, testItem.SellIn);
-            Assert.AreEqual(Constants.MINIMUM_QUALITY, testItem.Quality);
-        }
-
-        [Test]
         public void testSulfurasNoDecreaseInQualityAndSaleDate()
         {
             Item testItem = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 14, Quality = 27 };
@@ -145,6 +133,18 @@ namespace csharp
             app.UpdateQuality();
             Assert.AreEqual(4, testItem.SellIn);
             Assert.AreEqual(20, testItem.Quality);
+        }
+
+        [Test]
+        public void testBackstagePassConcertDatePassedDecrease()
+        {
+            Item testItem = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 23 };
+            IList<Item> Items = new List<Item> { testItem };
+            GildedRose app = new GildedRose(Items);
+
+            app.UpdateQuality();
+            Assert.AreEqual(-1, testItem.SellIn);
+            Assert.AreEqual(Constants.MINIMUM_QUALITY, testItem.Quality);
         }
 
         [Test]
