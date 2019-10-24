@@ -28,7 +28,7 @@ interpreter:java
 
 # turn on one of these if you prefer them to notepad or emacs.
 [view_program]
-*:mate
+*:leafpad
 #*:gedit
 [end]
 
