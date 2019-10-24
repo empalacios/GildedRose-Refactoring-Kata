@@ -28,6 +28,18 @@ namespace csharp
         }
 
         [Test]
+        public void testNormalDecreaseNonNegativeQuality()
+        {
+            Item testItem = new Item { Name = "foo", SellIn = 20, Quality = 0 };
+            IList<Item> Items = new List<Item> { testItem };
+            GildedRose app = new GildedRose(Items);
+
+            app.UpdateQuality();
+            Assert.AreEqual(19, testItem.SellIn);
+            Assert.AreEqual(0, testItem.Quality);
+        }
+
+        [Test]
         public void testSellDatePassedDecrease()
         {
             Item testItem = new Item { Name = "foo", SellIn = 0, Quality = 15 };
