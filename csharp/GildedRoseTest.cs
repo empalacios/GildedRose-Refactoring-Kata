@@ -64,6 +64,18 @@ namespace csharp
         }
 
         [Test]
+        public void testSulfurasNoDecreaseInQualityAndSaleDate()
+        {
+            Item testItem = new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 14, Quality = 27 };
+            IList<Item> Items = new List<Item> { testItem };
+            GildedRose app = new GildedRose(Items);
+
+            app.UpdateQuality();
+            Assert.AreEqual(14, testItem.SellIn);
+            Assert.AreEqual(27, testItem.Quality);
+        }
+
+        [Test]
         public void testAgedBrieIncreaseQuality()
         {
             Item testItem = new Item { Name = "Aged Brie", SellIn = 20, Quality = 17 };
