@@ -14,5 +14,17 @@ namespace csharp
             app.UpdateQuality();
             Assert.AreEqual("fixme", Items[0].Name);
         }
+
+        [Test]
+        public void testNormalDecrease()
+        {
+            Item testItem = new Item { Name = "foo", SellIn = 30, Quality = 15 };
+            IList<Item> Items = new List<Item> { testItem  };
+            GildedRose app = new GildedRose(Items);
+
+            app.UpdateQuality();
+            Assert.AreEqual(29, testItem.SellIn);
+            Assert.AreEqual(14, testItem.Quality);
+        }
     }
 }
