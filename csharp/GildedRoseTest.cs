@@ -98,6 +98,39 @@ namespace csharp
         }
 
         [Test]
+        public void testBackstagePassIncreaseQuality()
+        {
+            Item testItem = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 20, Quality = 17 };
+            IList<Item> Items = new List<Item> { testItem };
+            GildedRose app = new GildedRose(Items);
+
+            app.UpdateQuality();
+            Assert.AreEqual(18, testItem.Quality);
+        }
+
+        [Test]
+        public void testBackStageIncreaseQualityWhen10DaysLeft()
+        {
+            Item testItem = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 17 };
+            IList<Item> Items = new List<Item> { testItem };
+            GildedRose app = new GildedRose(Items);
+
+            app.UpdateQuality();
+            Assert.AreEqual(19, testItem.Quality);
+        }
+
+        [Test]
+        public void testBackStageIncreaseQualityWhen5DaysLeft()
+        {
+            Item testItem = new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 17 };
+            IList<Item> Items = new List<Item> { testItem };
+            GildedRose app = new GildedRose(Items);
+
+            app.UpdateQuality();
+            Assert.AreEqual(20, testItem.Quality);
+        }
+
+        [Test]
         public void testAgedBrieNotIncreaseQualityWhenMaximumQuality()
         {
             Item testItem = new Item { Name = "Aged Brie", SellIn = 20, Quality = 50 };
