@@ -83,6 +83,7 @@ namespace csharp
             GildedRose app = new GildedRose(Items);
 
             app.UpdateQuality();
+            Assert.AreEqual(19, testItem.SellIn);
             Assert.AreEqual(18, testItem.Quality);
         }
 
@@ -94,6 +95,7 @@ namespace csharp
             GildedRose app = new GildedRose(Items);
 
             app.UpdateQuality();
+            Assert.AreEqual(-1, testItem.SellIn);
             Assert.AreEqual(19, testItem.Quality);
         }
 
@@ -105,6 +107,7 @@ namespace csharp
             GildedRose app = new GildedRose(Items);
 
             app.UpdateQuality();
+            Assert.AreEqual(19, testItem.SellIn);
             Assert.AreEqual(18, testItem.Quality);
         }
 
@@ -116,6 +119,7 @@ namespace csharp
             GildedRose app = new GildedRose(Items);
 
             app.UpdateQuality();
+            Assert.AreEqual(9, testItem.SellIn);
             Assert.AreEqual(19, testItem.Quality);
         }
 
@@ -127,6 +131,7 @@ namespace csharp
             GildedRose app = new GildedRose(Items);
 
             app.UpdateQuality();
+            Assert.AreEqual(4, testItem.SellIn);
             Assert.AreEqual(20, testItem.Quality);
         }
 
@@ -138,6 +143,7 @@ namespace csharp
             GildedRose app = new GildedRose(Items);
 
             app.UpdateQuality();
+            Assert.AreEqual(19, testItem.SellIn);
             Assert.AreEqual(50, testItem.Quality);
         }
 
@@ -149,6 +155,7 @@ namespace csharp
             GildedRose app = new GildedRose(Items);
 
             app.UpdateQuality();
+            Assert.AreEqual(-1, testItem.SellIn);
             Assert.AreEqual(50, testItem.Quality);
         }
     }
