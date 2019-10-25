@@ -11,7 +11,7 @@
 
         public abstract int ComputeDecrease();
 
-        public void UpdateQuality()
+        public virtual void UpdateQuality()
         {
             int decreaseStep = ComputeDecrease();
             int newQuality = Item.Quality - decreaseStep;

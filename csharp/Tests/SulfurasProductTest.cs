@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using csharp.Decrease;
+using NUnit.Framework;
 using System.Collections.Generic;
 
 namespace csharp.Tests
@@ -15,7 +16,7 @@ namespace csharp.Tests
 
             app.UpdateQuality();
             Assert.AreEqual(14, testItem.SellIn);
-            Assert.AreEqual(27, testItem.Quality);
+            Assert.AreEqual(SulfurasProductDecrease.SULFURAS_QUALITY, testItem.Quality);
         }
     }
 }
