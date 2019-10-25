@@ -73,12 +73,14 @@
     <Compile Include="Tests\SulfurasProductTest.cs" />
     <Compile Include="Tests\AgedBrieProductTest.cs" />
     <Compile Include="Tests\BackstagePassProductTest.cs" />
+    <Compile Include="Tests\ConjuredProductTest.cs" />
     <Compile Include="Decrease\NormalProductDecrease.cs" />
     <Compile Include="Decrease\ProductDecrease.cs" />
     <Compile Include="Decrease\AgedBrieProductDecrease.cs" />
     <Compile Include="Decrease\SulfurasProductDecrease.cs" />
     <Compile Include="Decrease\BackstagePassProductDecrease.cs" />
     <Compile Include="Decrease\ProductDecreaseFactory.cs" />
+    <Compile Include="Decrease\ConjuredProductDecrease.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

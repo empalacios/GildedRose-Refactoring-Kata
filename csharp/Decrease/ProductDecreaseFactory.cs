@@ -16,6 +16,8 @@ namespace csharp.Decrease
                     return new BackstagePassProductDecrease(item);
                 case Products.SULFURAS:
                     return new SulfurasProductDecrease(item);
+                case Products.CONJURED:
+                    return new ConjuredProductDecrease(item);
                 default:
                     return new NormalProductDecrease(item);
             }
