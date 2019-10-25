@@ -6,8 +6,9 @@
         {
         }
 
-        public override void UpdateQuality()
+        public override int ComputeDecrease()
         {
+            return 0;
         }
 
         public override void UpdateSellIn()

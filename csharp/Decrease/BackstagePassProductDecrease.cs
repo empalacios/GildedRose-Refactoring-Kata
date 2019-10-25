@@ -6,33 +6,21 @@
         {
         }
 
-        public override void UpdateQuality()
+        public override int ComputeDecrease()
         {
-            int increaseStep = 1;
-            int newQuality;
-
-            if (Item.SellIn == 0)
+            if (Item.SellIn <= 0)
             {
-                Item.Quality = 0;
-                return;
-            }
-            if (Item.SellIn <= 10)
-            {
-                increaseStep = 2;
+                return Item.Quality;
             }
             if (Item.SellIn <= 5)
             {
-                increaseStep = 3;
+                return -3;
             }
-            newQuality = Item.Quality + increaseStep;
-            if (newQuality > Constants.MAXIMUM_QUALITY)
+            if (Item.SellIn <= 10)
             {
-                Item.Quality = Constants.MAXIMUM_QUALITY;
+                return -2;
             }
-            else
-            {
-                Item.Quality = newQuality;
-            }
+            return -1;
         }
 
         public override void UpdateSellIn()

@@ -9,7 +9,25 @@
 
         public Item Item { get; set; }
 
-        public abstract void UpdateQuality();
+        public abstract int ComputeDecrease();
+
+        public void UpdateQuality()
+        {
+            int decreaseStep = ComputeDecrease();
+            int newQuality = Item.Quality - decreaseStep;
+
+            if (newQuality < Constants.MINIMUM_QUALITY)
+            {
+                Item.Quality = Constants.MINIMUM_QUALITY;
+            } else if (newQuality > Constants.MAXIMUM_QUALITY)
+            {
+                Item.Quality = Constants.MAXIMUM_QUALITY;
+            }
+            else
+            {
+                Item.Quality = newQuality;
+            }
+        }
 
         public abstract void UpdateSellIn();
     }

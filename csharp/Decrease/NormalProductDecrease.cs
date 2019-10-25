@@ -7,24 +7,13 @@ namespace csharp
         {
         }
 
-        public override void UpdateQuality()
+        public override int ComputeDecrease()
         {
-            int decreaseStep = 1;
-            int newQuality;
-
             if (Item.SellIn <= 0)
             {
-                decreaseStep = 2;
+                return 2;
             }
-            newQuality = Item.Quality - decreaseStep;
-            if (newQuality < Constants.MINIMUM_QUALITY)
-            {
-                Item.Quality = Constants.MINIMUM_QUALITY;
-            }
-            else
-            {
-                Item.Quality = newQuality;
-            }
+            return 1;
         }
 
         public override void UpdateSellIn()
